@@ -38,11 +38,11 @@ class ApiExerciseApplicationTests {
 	@Test
     public void testWriteAlert() throws Exception {
         WriteRequest writeRequest = new WriteRequest();       
-        writeRequest.setAlert_id("b950482e9911ec7e41f7ca5e5d9a424f");
+        writeRequest.setAlert_id("b950482e9911ecsdfs41f75e5d9az23cv");
         writeRequest.setService_id("my_test_service_id");
         writeRequest.setService_name("my_test_service");
         writeRequest.setModel("my_test_model");
-        writeRequest.setAlert_ts("1695644160");
+        writeRequest.setAlert_ts("1695644060");
         writeRequest.setAlert_type("anomaly");
         writeRequest.setSeverity("warning");
         writeRequest.setTeam_slack("slack_ch");
@@ -63,9 +63,9 @@ class ApiExerciseApplicationTests {
 	@Test
     public void testReadAlerts() throws Exception {
         mockMvc.perform(get("/alerts")
-                .param("service_id", "service_id")
-                .param("start_ts", "1")
-                .param("end_ts", "50"))
+                .param("service_id", "m_test_service_id")
+                .param("start_ts", "169564400")
+                .param("end_ts", "1695644360"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.service_id").value("service_id"));
